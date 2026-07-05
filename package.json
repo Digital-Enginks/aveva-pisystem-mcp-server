@@ -1,0 +1,67 @@
+{
+  "name": "aveva-pisystem-mcp-server",
+  "version": "1.0.0",
+  "description": "Stateless, zero-trust MCP server for AVEVA PI System Web API",
+  "type": "module",
+  "main": "src/main.js",
+  "bin": {
+    "aveva-pisystem-mcp-server": "src/main.js"
+  },
+  "exports": {
+    ".": "./src/main.js"
+  },
+  "files": [
+    "src/",
+    "docs/",
+    "templates/",
+    "ARCHITECTURE.md",
+    "COMPATIBILITY.md",
+    "THREAT_MODEL.md",
+    "NOTICE"
+  ],
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "license": "Apache-2.0",
+  "author": "Oscar Ortiz <oscar.ortiz@denginks.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Digital-Enginks/aveva-pisystem-mcp-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Digital-Enginks/aveva-pisystem-mcp-server/issues"
+  },
+  "homepage": "https://github.com/Digital-Enginks/aveva-pisystem-mcp-server#readme",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "aveva",
+    "pi-system",
+    "pi-web-api",
+    "osisoft",
+    "historian",
+    "industrial",
+    "ot",
+    "time-series"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "start": "node src/main.js",
+    "pretest": "node test/validate-fixtures.js",
+    "test": "node --test test/**/*.test.js",
+    "test:coverage": "node --test --experimental-test-coverage --test-coverage-lines=88 --test-coverage-branches=74 --test-coverage-functions=85 test/**/*.test.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "kerberos": "2.1.1",
+    "pino": "9.2.0",
+    "undici": "6.27.0",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "fast-check": "3.21.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "Items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "WebId": { "type": "string" },
+          "Name": { "type": "string" },
+          "Path": { "type": "string" }
+        },
+        "required": ["WebId", "Name"],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": ["Items"],
+  "additionalProperties": true
+}

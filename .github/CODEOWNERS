@@ -1,0 +1,21 @@
+# CODEOWNERS - Code ownership rules for pull request reviews
+
+# Security & Auth layers
+/src/security/ @oscarinom
+/src/gateway/auth/ @oscarinom
+/docs/security/ @oscarinom
+SECURITY.md @oscarinom
+
+# Gateway & PI Client
+/src/gateway/ @oscarinom
+
+# Tools & Controllers
+/src/controllers/tools/ @oscarinom
+/docs/tools.md @oscarinom
+
+# CI/CD & Releases
+/.github/ @oscarinom
+package.json @oscarinom
+
+# Fallback core ownership
+* @oscarinom

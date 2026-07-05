@@ -1,0 +1,60 @@
+name: Release & Publish
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          release-type: node
+
+      # Steps below run only when a new release is generated
+      - name: Checkout Code
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.14.0'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        if: ${{ steps.release.outputs.release_created }}
+        run: npm ci
+
+      - name: Run verification tests
+        if: ${{ steps.release.outputs.release_created }}
+        run: npm test
+
+      # Publish package to npm with OIDC provenance
+      # Note: requires configuring npm publishing permissions on the repo
+      - name: Publish to npm
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --provenance --access public
+
+      # Generate a CycloneDX SBOM and attach it to the GitHub Release
+      # (documented in README "Provenance & SBOM" and SECURITY.md)
+      - name: Generate SBOM (CycloneDX)
+        if: ${{ steps.release.outputs.release_created }}
+        run: npx --yes @cyclonedx/cyclonedx-npm --omit dev --output-file sbom.cdx.json
+
+      - name: Attach SBOM to GitHub Release
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload "${{ steps.release.outputs.tag_name }}" sbom.cdx.json

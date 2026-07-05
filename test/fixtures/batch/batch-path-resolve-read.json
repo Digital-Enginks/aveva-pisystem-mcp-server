@@ -1,0 +1,10 @@
+{
+  "resolve": {
+    "Status": 200,
+    "Content": { "WebId": "BatchResolvedWebId", "Name": "tag1" }
+  },
+  "read": {
+    "Status": 200,
+    "Content": { "Timestamp": "2026-06-28T00:00:00Z", "Value": 12.3, "Good": true }
+  }
+}

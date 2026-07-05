@@ -1,0 +1,9 @@
+{
+  "Timestamp": "2026-06-20T12:00:00Z",
+  "Value": { "Name": "I/O Timeout", "Value": 246, "IsSystem": true },
+  "UnitsAbbreviation": "",
+  "Good": false,
+  "Questionable": false,
+  "Substituted": false,
+  "Annotated": false
+}

@@ -1,0 +1,9 @@
+{
+  "Timestamp": "2026-06-20T12:00:00Z",
+  "Value": 42.5,
+  "UnitsAbbreviation": "psi",
+  "Good": true,
+  "Questionable": false,
+  "Substituted": false,
+  "Annotated": true
+}

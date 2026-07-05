@@ -1,0 +1,8 @@
+{
+  "WebId": "Point1WebId",
+  "PointType": "Float32",
+  "Step": false,
+  "Zero": 0,
+  "Span": 100,
+  "Future": false
+}

@@ -1,0 +1,10 @@
+{
+  "Items": [
+    { "Timestamp": "2026-06-20T12:00:00Z", "Value": 10.1, "UnitsAbbreviation": "psi", "Good": true, "Questionable": false, "Substituted": false, "Annotated": false },
+    { "Timestamp": "2026-06-20T12:01:00Z", "Value": 10.4, "UnitsAbbreviation": "psi", "Good": true, "Questionable": true, "Substituted": false, "Annotated": false },
+    { "Timestamp": "2026-06-20T12:02:00Z", "Value": 10.6, "UnitsAbbreviation": "psi", "Good": true, "Questionable": false, "Substituted": true, "Annotated": false },
+    { "Timestamp": "2026-06-20T12:03:00Z", "Value": { "Name": "Shutdown", "Value": 254, "IsSystem": true }, "UnitsAbbreviation": "psi", "Good": false, "Questionable": false, "Substituted": false, "Annotated": false },
+    { "Timestamp": "2026-06-20T12:04:00Z", "Value": { "Name": "On", "Value": 1, "IsSystem": false }, "UnitsAbbreviation": "", "Good": true, "Questionable": false, "Substituted": false, "Annotated": true }
+  ],
+  "UnitsAbbreviation": "psi"
+}

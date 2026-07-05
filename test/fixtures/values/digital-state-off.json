@@ -1,0 +1,9 @@
+{
+  "Timestamp": "2026-06-20T12:00:00Z",
+  "Value": { "Name": "Off", "Value": 0, "IsSystem": false },
+  "UnitsAbbreviation": "",
+  "Good": true,
+  "Questionable": false,
+  "Substituted": false,
+  "Annotated": false
+}

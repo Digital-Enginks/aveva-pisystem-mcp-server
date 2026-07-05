@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "Items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Type": { "type": "string" },
+          "Value": {
+            "$ref": "timed-value.schema.json"
+          }
+        },
+        "required": ["Type", "Value"],
+        "additionalProperties": true
+      }
+    },
+    "UnitsAbbreviation": { "type": "string" }
+  },
+  "required": ["Items"],
+  "additionalProperties": true
+}

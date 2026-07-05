@@ -1,0 +1,52 @@
+name: Validate Codebase
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.14.0]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Lint commit messages (Conventional Commits)
+      if: github.event_name == 'pull_request'
+      run: |
+        # Lint all commits in the PR
+        git log --format=%s origin/${{ github.base_ref }}..HEAD | while read -r commit_msg; do
+          node scripts/lint-commits.js "$commit_msg"
+        done
+
+    - name: Run security audit
+      run: npm audit --audit-level=high --omit=dev
+
+    - name: Validate JSON fixtures against schemas
+      run: node test/validate-fixtures.js
+
+    - name: Run test suite with coverage gate
+      # Hard CI gate (§5.5.1): fails the build if line/branch/function coverage
+      # drops below the current measured floor. Ratchet these thresholds up
+      # toward the plan's 90% line / 85% branch targets as coverage improves.
+      run: npm run test:coverage

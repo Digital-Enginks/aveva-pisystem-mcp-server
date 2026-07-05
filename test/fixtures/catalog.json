@@ -1,0 +1,219 @@
+{
+  "values/good-numeric.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 200,
+    "schema": "timed-value.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "values/good-string.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 200,
+    "schema": "timed-value.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "values/questionable-numeric.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 200,
+    "schema": "timed-value.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "values/substituted-numeric.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 200,
+    "schema": "timed-value.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "values/digital-state-on.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 200,
+    "schema": "timed-value.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "values/system-state-no-data.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 200,
+    "schema": "timed-value.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "recorded/recorded-inside-empty.json": {
+    "endpoint": "/streams/{webId}/recorded",
+    "method": "GET",
+    "status": 200,
+    "schema": "stream-items.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "recorded/recorded-paged-page1.json": {
+    "endpoint": "/streams/{webId}/recorded",
+    "method": "GET",
+    "status": 200,
+    "schema": "stream-items.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "recorded/recorded-paged-page2.json": {
+    "endpoint": "/streams/{webId}/recorded",
+    "method": "GET",
+    "status": 200,
+    "schema": "stream-items.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "interpolated/interpolated-grid.json": {
+    "endpoint": "/streams/{webId}/interpolated",
+    "method": "GET",
+    "status": 200,
+    "schema": "stream-items.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "batch/batch-path-resolve-read.json": {
+    "endpoint": "/batch",
+    "method": "POST",
+    "status": 200,
+    "schema": "batch-response.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "batch/batch-all-success.json": {
+    "endpoint": "/batch",
+    "method": "POST",
+    "status": 200,
+    "schema": "batch-response.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "batch/batch-partial-failure.json": {
+    "endpoint": "/batch",
+    "method": "POST",
+    "status": 200,
+    "schema": "batch-response.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "metadata/point-metadata-numeric.json": {
+    "endpoint": "/points/{webId}",
+    "method": "GET",
+    "status": 200,
+    "schema": "point-metadata.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "metadata/point-metadata-digital.json": {
+    "endpoint": "/points/{webId}",
+    "method": "GET",
+    "status": 200,
+    "schema": "point-metadata.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "errors/401-bearer-misconfig.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 401,
+    "schema": "error-envelope.schema.json",
+    "provenance": "assumed"
+  },
+  "errors/403-authorization-denied.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 403,
+    "schema": "error-envelope.schema.json",
+    "provenance": "assumed"
+  },
+  "errors/404-webid-not-found.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 404,
+    "schema": "error-envelope.schema.json",
+    "provenance": "assumed"
+  },
+  "errors/429-rate-limit.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 429,
+    "schema": "error-envelope.schema.json",
+    "provenance": "assumed"
+  },
+  "errors/body-absent-500.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 500,
+    "schema": "error-envelope.schema.json",
+    "provenance": "assumed"
+  },
+  "values/annotated-numeric.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 200,
+    "schema": "timed-value.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "values/digital-state-off.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 200,
+    "schema": "timed-value.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "values/system-state-io-timeout.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 200,
+    "schema": "timed-value.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "values/future-timestamp-value.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 200,
+    "schema": "timed-value.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "recorded/recorded-mixed-quality.json": {
+    "endpoint": "/streams/{webId}/recorded",
+    "method": "GET",
+    "status": 200,
+    "schema": "stream-items.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "metadata/point-metadata-stale.json": {
+    "endpoint": "/points/{webId}",
+    "method": "GET",
+    "status": 200,
+    "schema": "point-metadata.schema.json",
+    "provenance": "derived-from-docs"
+  },
+  "errors/400-item-count-exceeded.json": {
+    "endpoint": "/streams/{webId}/recorded",
+    "method": "GET",
+    "status": 400,
+    "schema": "error-envelope.schema.json",
+    "provenance": "assumed"
+  },
+  "errors/409-conflict.json": {
+    "endpoint": "/batch",
+    "method": "POST",
+    "status": 409,
+    "schema": "error-envelope.schema.json",
+    "provenance": "assumed"
+  },
+  "errors/413-request-too-large.json": {
+    "endpoint": "/batch",
+    "method": "POST",
+    "status": 413,
+    "schema": "error-envelope.schema.json",
+    "provenance": "assumed"
+  },
+  "errors/500-server-error.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 500,
+    "schema": "error-envelope.schema.json",
+    "provenance": "assumed"
+  },
+  "errors/503-service-unavailable.json": {
+    "endpoint": "/streams/{webId}/value",
+    "method": "GET",
+    "status": 503,
+    "schema": "error-envelope.schema.json",
+    "provenance": "assumed"
+  }
+}

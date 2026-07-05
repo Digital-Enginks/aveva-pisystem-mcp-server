@@ -1,0 +1,12 @@
+{
+  "key1": {
+    "Status": 200,
+    "Headers": {},
+    "Content": { "Name": "item1" }
+  },
+  "key2": {
+    "Status": 200,
+    "Headers": {},
+    "Content": { "Name": "item2" }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "WebId": "Point2WebId",
+  "PointType": "Digital",
+  "DigitalSetName": "Modes",
+  "Step": true,
+  "Zero": 0,
+  "Span": 100,
+  "Future": false
+}

@@ -1,0 +1,12 @@
+{
+  "Items": [
+    {
+      "Timestamp": "2026-06-28T00:00:00Z",
+      "Value": 10.0,
+      "Good": true
+    }
+  ],
+  "Links": {
+    "Next": "http://pi-server.mcp.local/piwebapi/streams/W1Point1WebId/recorded?startIndex=1"
+  }
+}
