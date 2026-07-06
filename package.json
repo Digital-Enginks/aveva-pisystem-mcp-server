@@ -56,12 +56,12 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.29.0",
-    "kerberos": "2.1.1",
-    "pino": "9.2.0",
+    "kerberos": "2.2.2",
+    "pino": "9.14.0",
     "undici": "6.27.0",
-    "zod": "3.23.8"
+    "zod": "3.25.76"
   },
   "devDependencies": {
-    "fast-check": "3.21.0"
+    "fast-check": "3.23.2"
   }
 }
