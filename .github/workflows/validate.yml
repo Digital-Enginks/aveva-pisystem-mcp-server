@@ -18,12 +18,12 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         fetch-depth: 0
 
     - name: Set up Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
@@ -35,7 +35,9 @@ jobs:
       if: github.event_name == 'pull_request'
       run: |
         # Lint all commits in the PR
-        git log --format=%s origin/${{ github.base_ref }}..HEAD | while read -r commit_msg; do
+        # --no-merges: on pull_request events HEAD is the synthetic merge
+        # commit ("Merge X into Y"), which must not be linted
+        git log --no-merges --format=%s origin/${{ github.base_ref }}..HEAD | while read -r commit_msg; do
           node scripts/lint-commits.js "$commit_msg"
         done
 
