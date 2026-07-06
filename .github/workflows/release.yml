@@ -13,6 +13,8 @@ permissions:
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: google-github-actions/release-please-action@v4
         id: release
@@ -43,7 +45,7 @@ jobs:
       # Note: requires configuring npm publishing permissions on the repo
       # Skipped automatically while the NPM_TOKEN secret is not configured
       - name: Publish to npm
-        if: ${{ steps.release.outputs.release_created && secrets.NPM_TOKEN != '' }}
+        if: ${{ steps.release.outputs.release_created && env.NPM_TOKEN != '' }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --provenance --access public
