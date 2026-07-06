@@ -41,8 +41,9 @@ jobs:
 
       # Publish package to npm with OIDC provenance
       # Note: requires configuring npm publishing permissions on the repo
+      # Skipped automatically while the NPM_TOKEN secret is not configured
       - name: Publish to npm
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.release_created && secrets.NPM_TOKEN != '' }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --provenance --access public
